@@ -63,6 +63,10 @@ section:hover{
     opacity: .9;
 }
 
+.gallery label:hover{
+    opacity: .9;
+}
+
 /*Main*/
 main, aside{
     padding-bottom: 3em;
@@ -73,11 +77,7 @@ aside{
     margin:auto;
 }
 
-h3{
-   color:rgb(255,255,255); 
-}
-
-article h2{
+h2{
     color: rgb(40,40,40);
     padding: 1em 1em 0;
     margin: 0;
@@ -123,12 +123,22 @@ section h3{
 
 .teasermain h3{
     background-color: rgb(100,40,60);
-    font-size: 1.6em;
+    font-size: 1.5em;
 }
 
 .teasermain{
     margin-bottom: 3em;
     box-shadow: 0 4em 3em -4em rgb(100,100,100);
+}
+
+.teasergallery{
+    width: 85%;
+    margin: auto;
+}
+
+.teasergallery h3{
+    background-color: rgb(222,165,65);
+    font-style: italic;
 }
 
 .teaserimage{
@@ -158,4 +168,53 @@ footer{
     background-color: rgb(40,40,40);
     color: rgb(180,180,180);
     font-size: .8em;
+}
+
+/*Photo Gallery*/
+.gallery main{
+    position: relative;
+    padding-bottom: calc(56% + 2.5em);
+}
+
+.gallery figure{
+    margin: 0;
+    position: absolute;
+    opacity:0;
+    transition: opacity .5s;
+}
+
+.gallery h2, h4, nav{
+    width:90%;
+    margin: auto;
+}
+.gallery h2{
+    padding: 1em 0 .0;
+}
+
+.gallery h4{
+    padding: 0 0 2em;
+}
+
+.gallery nav{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: .3em .3em;
+    padding-bottom: 2em;
+}
+
+input {
+    display: none;
+}
+
+input:nth-of-type(1):checked ~ main figure:nth-of-type(1),
+input:nth-of-type(2):checked ~ main figure:nth-of-type(2),
+input:nth-of-type(3):checked ~ main figure:nth-of-type(3),
+input:nth-of-type(4):checked ~ main figure:nth-of-type(4),
+input:nth-of-type(5):checked ~ main figure:nth-of-type(5),
+input:nth-of-type(6):checked ~ main figure:nth-of-type(6),
+input:nth-of-type(7):checked ~ main figure:nth-of-type(7),
+input:nth-of-type(8):checked ~ main figure:nth-of-type(8)
+{
+    opacity: 1;
 }
